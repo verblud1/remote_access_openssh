@@ -15,7 +15,7 @@ if %errorlevel% == 0 (
 
 REM Start SSH tunnel
 echo Starting secure connection...
-start "Tunnel ORSD DB" plink.exe -ssh sshuser@192.168.10.59 -pw "orsd123" -L 8080:172.30.1.18:80 -N -batch
+start "Tunnel SSH" plink.exe -ssh sshuser@IP-адрес хоста -pw "ПАРОЛЬ ОТ ХОСТА" -L 8080:ТУТ НУЖНЫЙ IP сайта,который пропускаем через туннель:80 -N -batch
 
 REM Wait for connection
 echo Waiting for connection...
@@ -23,14 +23,14 @@ ping -n 4 127.0.0.1 > nul
 
 REM Open browser
 echo Opening database in browser...
-start "" "http://localhost:8080/aspnetkp/Common/FindInfo.aspx"
+start "" "ТУТ АВТО ЗАПУСК НУЖНОЙ ССЫЛКИ"
 
 echo.
 echo ============================================
 echo SUCCESS!
 echo ============================================
 echo Database opened in browser.
-echo DO NOT CLOSE the "Tunnel ORSD DB" window!
+echo DO NOT CLOSE the "Tunnel SSH" window!
 echo.
 echo When finished working:
 echo 1. Close browser tab with database
@@ -42,4 +42,5 @@ pause
 REM Close tunnel
 taskkill /f /im plink.exe > nul
 echo Tunnel closed. Connection finished.
+
 ping -n 2 127.0.0.1 > nul
