@@ -34,6 +34,7 @@ localhost (Шифрование) БД Видит только IP хоста
   ### Добавляем sshd в автозагрузку
   Запустите службу SSH
   net start sshd
+
   Сделайте автозапуск
   sc config sshd start=auto
   
